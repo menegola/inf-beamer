@@ -60,7 +60,7 @@
 \setbeamercolor{frametitle}{fg = InfWhite}
 \setbeamercolor{title}{fg = InfBlack}
 \setbeamercolor{section in toc}{fg = InfBlack}
-\setbeamercolor{section in toc shaded}{fg = InfBlack} 
+\setbeamercolor{section in toc shaded}{fg = InfBlack}
 \setbeamercolor{item}{fg = InfBlack}
 \setbeamercolor{subitem}{fg = InfBlack}
 \setbeamercolor{subsubitem}{fg = InfBlack}
@@ -75,6 +75,9 @@
 \setbeamercolor{block body}{bg = InfWhite}
 \setbeamercolor{block title example}{fg = InfGray, bg = InfWhite}
 \setbeamercolor{block title alerted}{fg = InfRed, bg = InfWhite}
+\setbeamercolor{part title}{fg=InfBlack}
+\setbeamercolor{section name}{fg=InfGray}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%                Fonts                  %%%%%
@@ -265,7 +268,7 @@
         }
     \end{beamercolorbox}
 }
-  	
+
 \setbeamertemplate{navigation symbols}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -277,7 +280,7 @@
 \setbeamertemplate{title page}{%
     \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight,center]{title}%
     \raisebox{0pt}[0pt][0pt]{%
-   	    \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\paperheight}
+            \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\paperheight}
             \pgfrect[fill]
                 {\pgfpoint{0.00\paperwidth}{0.215\paperheight}}
                 {\pgfpoint{1.00\paperwidth}{0.785\paperheight}}
@@ -319,6 +322,43 @@
     }
     \end{beamercolorbox}
 }
+
+\setbeamertemplate{section page}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight,center]{title}%
+    \raisebox{0pt}[0pt][0pt]{%
+      \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\paperheight}
+        \pgfrect[fill]
+                {\pgfpoint{0.00\paperwidth}{0.215\paperheight}}
+                {\pgfpoint{1.00\paperwidth}{0.785\paperheight}}
+                \color{InfRed}
+                \pgfrect[fill]
+                {\pgfpoint{0.4\paperwidth}{0.200\paperheight}}
+                {\pgfpoint{0.6\paperwidth}{0.015\paperheight}}
+                \pgfputat
+                    {\pgfpoint{0.4\paperwidth}{0.215\paperheight+2\InfOutterTitleBottomMargin}}
+                    {\pgfbox[left,bottom]{%
+                        \begin{minipage}[t][0.785\paperheight][b]{0.6\paperwidth-2\InfOutterTitleRightMargin}%
+                          \vfill
+                          \vspace{1.5em}
+
+                          \vfill
+                          \raggedright\color{InfLightGray}\large\bfseries\insertsection
+                        \end{minipage}
+                    }}
+                    \normalsize
+                    \pgfputat
+                        {\pgfpoint{0.4\paperwidth}{0.00\paperheight-1em}}
+                        {\pgfbox[left,bottom]{%
+                            \color{InfBlack}
+                            \begin{minipage}[t][0.200\paperheight+1em][b]{0.6\paperwidth-2\InfOutterTitleRightMargin}%
+
+                            \end{minipage}
+                       }}
+     \end{pgfpicture}
+    }
+  \end{beamercolorbox}
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%                Others                 %%%%%
